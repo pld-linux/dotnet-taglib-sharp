@@ -20,6 +20,21 @@ the most common movie and music formats, abstracting away format
 specificity. TagLib# offers either a common API for all formats or
 access to specific APIs for a given format.
 
+%package devel
+Summary:	Header files for taglib-sharp library
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotektaglib-sharp 
+Group:		Development/Libraries
+# if base package contains shared library for which these headers are
+#Requires:	%{name} = %{version}-%{release}
+# if -libs package contains shared library for which these headers are
+#Requires:	%{name}-libs = %{version}-%{release}
+
+%description devel
+Header files for taglib-sharp library.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe bibliote taglib-sharp.
+
 %prep
 %setup -q
 
@@ -42,7 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%{_prefix}/lib/mono/taglib-sharp
 %{_prefix}/lib/mono/gac/taglib-sharp
 %{_prefix}/lib/mono/gac/policy.2.0.taglib-sharp
+
+%files devel
+%{_prefix}/lib/mono/taglib-sharp
 %{_prefix}/share/pkgconfig/taglib-sharp.pc

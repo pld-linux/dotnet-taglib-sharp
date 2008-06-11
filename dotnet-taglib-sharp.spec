@@ -2,10 +2,11 @@
 # TODO: Make build as noarch
 # TODO: Rename to dotnet-taglib-sharp?
 #
+%include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
 Version:	2.0.3.0
-Release:	5
+Release:	6
 License:	LGPLv2
 Group:		Development
 URL:		http://taglib-sharp.com/

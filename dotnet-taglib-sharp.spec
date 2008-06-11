@@ -1,5 +1,6 @@
 #
 # TODO: Make build as noarch
+# TODO: Rename to dotnet-taglib-sharp?
 #
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
@@ -28,10 +29,7 @@ access to specific APIs for a given format.
 Summary:	Header files for taglib-sharp library
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotektaglib-sharp
 Group:		Development/Libraries
-# if base package contains shared library for which these headers are
-#Requires:	%{name} = %{version}-%{release}
-# if -libs package contains shared library for which these headers are
-#Requires:	%{name}-libs = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for taglib-sharp library.

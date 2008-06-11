@@ -4,7 +4,7 @@
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
 Version:	2.0.3.0
-Release:	3
+Release:	4
 License:	LGPLv2
 Group:		Development
 URL:		http://taglib-sharp.com/

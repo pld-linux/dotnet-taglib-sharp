@@ -8,7 +8,7 @@ Release:	1
 License:	LGPLv2
 Group:		Development
 URL:		http://taglib-sharp.com/
-Source0:	http://www.taglib-sharp.com/Download/%name-%{version}.tar.gz
+Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
 # Source0-md5:	aa2c344760c8f4d878957fd4600155a5
 BuildRequires:	mono-csharp
 #BuildArch:	noarch

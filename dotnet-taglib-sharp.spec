@@ -6,13 +6,16 @@
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
 Version:	2.0.3.0
-Release:	6
+Release:	7
 License:	LGPLv2
 Group:		Development
-URL:		http://taglib-sharp.com/
 Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
 # Source0-md5:	aa2c344760c8f4d878957fd4600155a5
 Patch0:		%{name}-gacdir.patch
+# http://bugzilla.gnome.org/show_bug.cgi?id=532561
+# http://forum.taglib-sharp.com/viewtopic.php?f=5&t=276&p=821#p821
+Patch1:		%{name}-add_extensions_mimetypes_thorough_mpeg_checking.patch
+URL:		http://taglib-sharp.com/
 BuildRequires:	dotnet-gnome-sharp-devel
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
@@ -41,9 +44,9 @@ Pliki nagłówkowe bibliote taglib-sharp.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p0
 
 %build
-#cp -f /usr/share/automake/config.sub .
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}

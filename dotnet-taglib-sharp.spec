@@ -5,16 +5,13 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
-Version:	2.0.3.0
-Release:	7
+Version:	2.0.3.2
+Release:	1
 License:	LGPLv2
 Group:		Development
-Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
-# Source0-md5:	aa2c344760c8f4d878957fd4600155a5
-Patch0:		%{name}-gacdir.patch
-# http://bugzilla.gnome.org/show_bug.cgi?id=532561
-# http://forum.taglib-sharp.com/viewtopic.php?f=5&t=276&p=821#p821
-Patch1:		%{name}-add_extensions_mimetypes_thorough_mpeg_checking.patch
+#Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
+Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	7c6e613e803b31d3d62e4def0359fcb4
 URL:		http://taglib-sharp.com/
 BuildRequires:	dotnet-gnome-sharp-devel
 BuildRequires:	libtool
@@ -43,8 +40,6 @@ Pliki nagłówkowe bibliote taglib-sharp.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p0
 
 %build
 %{__libtoolize}
@@ -59,8 +54,6 @@ Pliki nagłówkowe bibliote taglib-sharp.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/pkgconfig
-mv $RPM_BUILD_ROOT%{_libdir}/pkgconfig/* $RPM_BUILD_ROOT%{_datadir}/pkgconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT

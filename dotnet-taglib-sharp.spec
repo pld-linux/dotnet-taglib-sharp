@@ -13,10 +13,13 @@ Group:		Development
 Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	7c6e613e803b31d3d62e4def0359fcb4
 URL:		http://taglib-sharp.com/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	dotnet-gnome-sharp-devel
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
 BuildRequires:	monodoc
+BuildRequires:	pkgconfig
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

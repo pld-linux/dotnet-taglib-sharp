@@ -5,13 +5,13 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
 Name:		taglib-sharp
-Version:	2.0.3.2
-Release:	2
+Version:	2.0.3.6
+Release:	1
 License:	LGPLv2
 Group:		Development
 #Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
 Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	7c6e613e803b31d3d62e4def0359fcb4
+# Source0-md5:	4dc516ccf6719dc71130915bbc413c1a
 URL:		http://taglib-sharp.com/
 BuildRequires:	autoconf
 BuildRequires:	automake

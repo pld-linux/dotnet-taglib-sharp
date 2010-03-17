@@ -1,16 +1,15 @@
 #
 # TODO: Make build as noarch
-# TODO: Rename to dotnet-taglib-sharp?
 #
 %include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
-Name:		taglib-sharp
+Name:		dotnet-taglib-sharp
 Version:	2.0.3.6
-Release:	1
-License:	LGPLv2
+Release:	2
+License:	LGPL v2
 Group:		Development
 #Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
-Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/taglib-sharp-%{version}.tar.gz
 # Source0-md5:	4dc516ccf6719dc71130915bbc413c1a
 URL:		http://taglib-sharp.com/
 BuildRequires:	autoconf
@@ -20,6 +19,8 @@ BuildRequires:	libtool
 BuildRequires:	mono-csharp
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
+Provides:	taglib-sharp
+Obsoletes:	taglib-sharp
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,19 +31,21 @@ specificity. TagLib# offers either a common API for all formats or
 access to specific APIs for a given format.
 
 %package devel
-Summary:	Header files for taglib-sharp library
-Summary(pl.UTF-8):	Pliki nagłówkowe bibliotektaglib-sharp
+Summary:	TagLib# development files
+Summary(pl.UTF-8):	Pliki programistyczne TagLib#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Provides:	taglib-sharp-devel
+Obsoletes:	taglib-sharp-devel
 
 %description devel
-Header files for taglib-sharp library.
+TagLib# development files.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe bibliote taglib-sharp.
+Pliki programistyczne TagLib#.
 
 %prep
-%setup -q
+%setup -q -n taglib-sharp-%{version}
 
 %build
 %{__libtoolize}

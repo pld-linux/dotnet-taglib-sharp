@@ -4,16 +4,16 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
 Name:		dotnet-taglib-sharp
-Version:	2.0.3.6
-Release:	2
+Version:	2.0.3.7
+Release:	1
 License:	LGPL v2
 Group:		Development
 #Source0:	http://www.taglib-sharp.com/Download/%{name}-%{version}.tar.gz
-Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/taglib-sharp-%{version}.tar.gz
-# Source0-md5:	4dc516ccf6719dc71130915bbc413c1a
+Source0:	http://download.banshee-project.org/taglib-sharp/%{version}/taglib-sharp-%{version}.tar.bz2
+# Source0-md5:	dbd16b0ffcff8b0f9c0004090545d239
 URL:		http://taglib-sharp.com/
 BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	dotnet-gnome-sharp-devel
 BuildRequires:	libtool
 BuildRequires:	mono-csharp

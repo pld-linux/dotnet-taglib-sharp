@@ -1,0 +1,32 @@
+--- taglib-sharp-2.0.4.0/configure.ac.pld	2011-04-13 18:28:13.000000000 +0200
++++ taglib-sharp-2.0.4.0/configure.ac	2012-03-20 22:29:11.776008903 +0100
+@@ -142,13 +142,7 @@ docs/Makefile
+ docs/Package.en.xml
+ ])
+ 
+-# Test suite is not shipped, only builds from git.
+-if test -d tests; then
+-	AC_CONFIG_FILES([tests/Makefile])
+-	AM_CONDITIONAL(IN_DIST, false)
+-else
+-	AM_CONDITIONAL(IN_DIST, true)
+-fi
++AM_CONDITIONAL(IN_DIST, true)
+ AC_OUTPUT
+ 
+ echo "TagLib# ($ASSEMBLY_NAME-$ASSEMBLY_VERSION) is ready to be compiled."
+--- taglib-sharp-2.0.4.0/Makefile.am.pld	2012-03-20 22:23:06.257989085 +0100
++++ taglib-sharp-2.0.4.0/Makefile.am	2012-03-20 22:28:47.722805878 +0100
+@@ -1,12 +1,7 @@
+ SUBDIRS = \
+    src    \
+-   examples \
+    docs
+ 
+-if !IN_DIST
+-SUBDIRS += tests
+-endif
+-
+ DIST_SUBDIRS = \
+    src    \
+    examples \

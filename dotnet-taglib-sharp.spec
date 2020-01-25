@@ -1,7 +1,6 @@
 #
 # TODO: Make build as noarch
 #
-%include	/usr/lib/rpm/macros.mono
 Summary:	Metadata library for most common movie and music formats
 Name:		dotnet-taglib-sharp
 Version:	2.0.4.0

@@ -46,7 +46,7 @@ Pliki programistyczne TagLib#.
 
 %prep
 %setup -q -n taglib-sharp-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__libtoolize}
